@@ -2,6 +2,8 @@
 NextJS 학습 공간
 
 특징
+
+
 1. 라우팅 - 레이아웃. 중첩 라우팅, 로딩 상태, 오류 처리 등 지원
 2. 표현 - 클라이언트 사이드 렌더링, 서버 사이드 렌더링 둘 다 지원(동적, 정적 렌더링 최적화)
 3. 데이터 페칭 - async/await을 사용한 데이터 가져오기와 fetch 요청에 대한 메모 생성, 데이터 캐싱 및 재검증을 위한 확장된 api 제공
@@ -9,44 +11,62 @@ NextJS 학습 공간
 5. 최적화 - 이미지, 글꼴, 스크립트 등 최적화
 6. 타입스크립트 
 
-# Next.js  설정 파일들
+
+### Next.js  설정 파일들
+
+* Next.config.js - Next.js에 대한 구성 파일
+* package.json - 프로젝트 종속성 및 스크립트
+* middleware.ts - Next.js 요청 미들웨어
+* .env - 환경 변수
+* .eslintrc.json - ESLint에 대한 구성 파일
+* .gitignore - 무시할 Git 파일 및 폴더
+* Next-env.d.ts - Next.js에 대한 Typescript 선언 파일
+* tsconfig.json - Typescript에 대한 구성 파일
+
+
 ---
-Next.config.js - Next.js에 대한 구성 파일
-package.json - 프로젝트 종속성 및 스크립트
-middleware.ts - Next.js 요청 미들웨어
-.env - 환경 변수
-.eslintrc.json - ESLint에 대한 구성 파일
-.gitignore - 무시할 Git 파일 및 폴더
-Next-env.d.ts - Next.js에 대한 Typescript 선언 파일
-tsconfig.json - Typescript에 대한 구성 파일
 
-# 라우팅 파일
-layout.tsx - 중첩 디자인
-page.tsx - 페이지 라우팅
-loading.tsx - UI 로딩 중일때 라우팅
-not-found.tsx - 존재하지 않는 페이지일 때 라우팅
-error.tsx - 오류일 때 라우팅
-global-error.tsx - 전체 오류일 때 라우팅
-route.ts - api 엔드포인트
-template.tsx - 재렌더링
-default.tsx - 병렬 경로 대체 페이지
-중첩된 경로는 폴더로 만들 수 있음.
 
-# 동적 경로
-[folder] - 동적 경로 구간
-[...folder] - 포괄적인 경로 구간
-[[...folder]] - 선택 가능한 포괄적인 경로 구간
+## 프로젝트 구조
 
-# 경로 그룹 및 개인 폴더
-(folder) - 라우팅에 영향을 주지 않고 경로 그룹화
-_folder - 라우팅에서 속한 폴더 및 파일 제외
 
-# 경로 끼어들기
-(.)folder - 같은 레벨 가로채기
-(..)folder - 한 단계 위 가로채기 (...)루트에서 가로채기
 
-# SEO 최적화
-sitemap.xml - 사이트맵 파일
+### 라우팅 파일
+
+* layout.tsx - 중첩 디자인
+* page.tsx - 페이지 라우팅
+* loading.tsx - UI 로딩 중일때 라우팅
+* not-found.tsx - 존재하지 않는 페이지일 때 라우팅
+* error.tsx - 오류일 때 라우팅
+* global-error.tsx - 전체 오류일 때 라우팅
+* route.ts - api 엔드포인트
+* template.tsx - 재렌더링
+* default.tsx - 병렬 경로 대체 페이지
+* 중첩된 경로는 폴더로 만들 수 있음.
+
+
+### 동적 경로
+* [folder] - 동적 경로 구간
+* [...folder] - 포괄적인 경로 구간
+* [[...folder]] - 선택 가능한 포괄적인 경로 구간
+
+
+### 경로 그룹 및 개인 폴더
+* (folder) - 라우팅에 영향을 주지 않고 경로 그룹화
+* _folder - 라우팅에서 속한 폴더 및 파일 제외
+
+
+### 경로 끼어들기
+* (.)folder - 같은 레벨 가로채기
+* (..)folder - 한 단계 위 가로채기 (...)루트에서 가로채기
+
+
+### SEO 최적화
+* sitemap.xml - 사이트맵 파일
+
+
+---
+
 
 /* 중간 점검 */
 api폴더에는 route.ts가 아닌 db.ts같은 파일은 라우팅 되지않음.
